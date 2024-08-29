@@ -34,6 +34,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ### Examples:
 
-![GIFMaker_me-1](https://github.com/user-attachments/assets/bbc5e86b-62f9-40f8-9bbb-2ca1466f92f7) ![GIFMaker_me-2](https://github.com/user-attachments/assets/1648a83e-e295-4f32-ac6b-0813d298f58d)
+![GIFMaker_me-1](https://github.com/user-attachments/assets/bbc5e86b-62f9-40f8-9bbb-2ca1466f92f7) ![GIFMaker_me-2](https://github.com/user-attachments/assets/1648a83e-e295-4f32-ac6b-0813d298f58d) ![IMG_1201](https://github.com/user-attachments/assets/826ac147-f119-471d-8dba-5cd1fc5618ac)
+
 
 
