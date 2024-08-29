@@ -1,18 +1,38 @@
 html, body {
-  background-color: #1c1c1e; /* A soft black background */
-  font-family: 'Roboto', sans-serif; /* Modern sans-serif font */
+  background-color: #1c1c1e;
   color: #ffffff;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'BW Gradual';
   height: 100vh; /* Full viewport height */
   overflow: hidden;
+  user-select: none;
+}
+
+h1 {
+  font-size: 42pt;
+  margin: 0;
 }
 
 .container {
   text-align: center;
+}
+
+.temperature {
+  font-family: 'BW Gradual';
+  font-weight: lighter;
+  font-size: 14pt;
+}
+
+.temperature p {
+  margin: 8px 0;
+}
+
+.temperature-value {
+  font-weight: bold;
 }
 
 button {
@@ -24,6 +44,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-weight: bold;
   margin: 10px 2px;
   cursor: pointer;
   border-radius: 8px;
@@ -38,4 +59,28 @@ button:hover {
 button:active {
   background-color: #1a78c2; /* Darker on click */
   transform: scale(0.98);
+}
+
+/* Regular Version */
+@font-face {
+  font-family: 'BW Gradual';
+  src: url('./fonts/BwGradual-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Light version */
+@font-face {
+  font-family: 'BW Gradual';
+  src: url('./fonts/BwGradual-Thin.otf') format('opentype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+/* Bold Version */
+@font-face {
+  font-family: 'BW Gradual';
+  src: url('./fonts/BwGradual-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
 }

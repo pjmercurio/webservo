@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [temperature, setTemperature] = useState({ temp_c: null, temp_f: null });
+  const temperatureUpdateInterval = 30000;
 
   const handleButtonClick = async () => {
     setLoading(true);
@@ -27,13 +28,10 @@ export default function Home() {
       }
     };
 
-    // Fetch the temperature immediately when the component mounts
+    // Fetch the temperature immediately when the component mounts, then every 30 seconds
     fetchTemperature();
+    const interval = setInterval(fetchTemperature, temperatureUpdateInterval);
 
-    // Set up an interval to fetch the temperature every 30 seconds
-    const interval = setInterval(fetchTemperature, 30000);
-
-    // Clean up the interval when the component unmounts
     return () => clearInterval(interval);
   }, []);
 
@@ -50,15 +48,16 @@ export default function Home() {
     <div className="container">
       <h1>Servo Control</h1>
       <button className="button" onClick={handleButtonClick} disabled={loading}>
-        {loading ? 'Working...' : 'Toggle A/C'}
+        {loading ? 'Toggling...' : 'Toggle A/C'}
       </button>
 
-      {temperature.temp_f !== null && (
-        <div style={{ marginTop: '20px' }}>
+      {temperature.temp_f !== null || true && (
+        <div className='temperature'>
           <p>
-            Current Temperature: 
-            <span style={{ color: getColorForTemperature(temperature.temp_f) }}>
-              {` ${temperature.temp_f.toFixed(2)}°F`}
+            Current Temperature:
+            <span className='temperature-value' style={{ color: getColorForTemperature(temperature.temp_f) }}>
+              {` 38.5°F`}
+              {/* {` ${temperature.temp_f.toFixed(1)}°F`} */}
             </span>
           </p>
         </div>
