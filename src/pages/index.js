@@ -27,7 +27,14 @@ export default function Home() {
       }
     };
 
+    // Fetch the temperature immediately when the component mounts
     fetchTemperature();
+
+    // Set up an interval to fetch the temperature every 30 seconds
+    const interval = setInterval(fetchTemperature, 30000);
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(interval);
   }, []);
 
   const getColorForTemperature = (temp_f) => {
