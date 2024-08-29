@@ -12,13 +12,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 TODO: Insert pics here
 
 
-### Testing
+### Testing:
 
 It's easiest to test the hardware parts first, and separately:
 
 For the servo motor, run the command: `python3 ~/Documents/webservo/src/python/servo_control.py` and see if the servo moves.
 
-For the temp probe, run the command: `python3 ~/Documents/webservo/src/python/temperature.py` and and temperature should be printed in the console.
+For the temp probe, run the command: `python3 ~/Documents/webservo/src/python/temperature.py` and the temperature should be printed in the console.
 
 
 To test the webapp, navigate to the webservo directory (I have it in the root of the Documents folder) and run `npm run dev`.  
