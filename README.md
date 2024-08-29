@@ -6,6 +6,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - RaspberryPi (I'm using a Zero 2W)
 - 9g mini servo
 - Temperature probe (optional)
+- 4.7kΩ pull-up resistor for temperature probe (optional)
 
 ### Wiring Up The Pi:
 
