@@ -7,13 +7,13 @@ html, body {
   justify-content: center;
   align-items: center;
   font-family: 'BW Gradual';
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   overflow: hidden;
   user-select: none;
 }
 
 h1 {
-  font-size: 42pt;
+  font-size: 36pt;
   margin: 0;
 }
 

@@ -10,7 +10,6 @@ export default function Home() {
     setLoading(true);
     try {
       const response = await axios.post('/api/move-servo');
-      // alert(response.data.message);
     } catch (error) {
       alert('Error moving servo');
     } finally {
@@ -51,13 +50,12 @@ export default function Home() {
         {loading ? 'Toggling...' : 'Toggle A/C'}
       </button>
 
-      {temperature.temp_f !== null || true && (
+      {temperature.temp_f !== null && (
         <div className='temperature'>
           <p>
             Current Temperature:
             <span className='temperature-value' style={{ color: getColorForTemperature(temperature.temp_f) }}>
-              {` 38.5°F`}
-              {/* {` ${temperature.temp_f.toFixed(1)}°F`} */}
+              {` ${temperature.temp_f.toFixed(1)}°F`}
             </span>
           </p>
         </div>
