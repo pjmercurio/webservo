@@ -23,7 +23,8 @@ sudo apt-get install -y nodejs`
 ```
 [Unit]
 Description=Next.js Web App For Controlling A/C
-After=network.target
+After=network.target pigpiod.service
+Requires=pigpiod.service
 
 [Service]
 ExecStart=/usr/bin/npm run start --prefix /home/pi/Documents/webservo
