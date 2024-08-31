@@ -20,7 +20,8 @@ sudo apt-get install -y nodejs`
 - Build the production site: `npm run build`
 - Set up the service to run automatically on startup: `sudo nano /etc/systemd/system/webservo.service`
 - Then paste this into the webservo.service file (note the username as this may differ in your case):
-`[Unit]
+```
+[Unit]
 Description=Next.js Web App For Controlling A/C
 After=network.target
 
@@ -32,7 +33,8 @@ User=pi
 Environment=PORT=3000
 
 [Install]
-WantedBy=multi-user.target`
+WantedBy=multi-user.target
+```
 
 
 ### Testing:
