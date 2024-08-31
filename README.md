@@ -12,6 +12,28 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 TODO: Insert pics here
 
+### Setting Up The Software:
+- Copy the files from this repo to `~/Documents`
+- Install node.js: `curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs`
+- Install deps: cd into the `~/Documents/webservo` folder and run `npm install`
+- Build the production site: `npm run build`
+- Set up the service to run automatically on startup: `sudo nano /etc/systemd/system/webservo.service`
+- Then paste this into the webservo.service file (note the username as this may differ in your case):
+`[Unit]
+Description=Next.js Web App For Controlling A/C
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/npm run start --prefix /home/pi/Documents/webservo
+WorkingDirectory=/home/pi/Documents/webservo
+Restart=always
+User=pi
+Environment=PORT=3000
+
+[Install]
+WantedBy=multi-user.target`
+
 
 ### Testing:
 
