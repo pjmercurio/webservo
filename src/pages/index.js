@@ -27,11 +27,23 @@ export default function Home() {
       }
     };
 
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        fetchTemperature();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
     // Fetch the temperature immediately when the component mounts, then every 30 seconds
     fetchTemperature();
     const interval = setInterval(fetchTemperature, temperatureUpdateInterval);
 
-    return () => clearInterval(interval);
+    // Cleanup the interval and event listener on unmount
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
   }, []);
 
   const getColorForTemperature = (temp_f) => {

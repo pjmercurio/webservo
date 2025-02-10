@@ -2,18 +2,19 @@ import pigpio
 import time
 
 servo_pin = 18  # GPIO pin where the servo is connected
-sleep_time = 0.25
+sleep_time = 0.3
+servo_neutral_position = 1500
+servo_active_position = 1800
 
 pi = pigpio.pi()
 pi.set_mode(servo_pin, pigpio.OUTPUT)
+# pi.set_servo_pulsewidth(servo_pin, servo_neutral_position)
 
 def move_servo_to_press():
-    # Move the servo to 1800 (pressing position)
-    pi.set_servo_pulsewidth(servo_pin, 1800)
-    time.sleep(sleep_time)  # Adjust the duration as needed for the press
+    pi.set_servo_pulsewidth(servo_pin, servo_active_position)
+    time.sleep(sleep_time)
 
-    # Move the servo back to 1500 (neutral position)
-    pi.set_servo_pulsewidth(servo_pin, 1500)
+    pi.set_servo_pulsewidth(servo_pin, servo_neutral_position)
     time.sleep(sleep_time)  # Allow time for the servo to return
 
     # Optionally stop the servo PWM signal
